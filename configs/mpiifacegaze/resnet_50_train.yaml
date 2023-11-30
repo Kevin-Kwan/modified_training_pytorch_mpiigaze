@@ -7,6 +7,11 @@ transform:
   mpiifacegaze_gray: False
 model:
   name: resnet_50
+  backbone:
+    name: resnet_simple
+    pretrained: resnet50
+    resnet_block: bottleneck
+    resnet_layers: [3, 4, 6]
 train:
   batch_size: 32
   optimizer: sgd
@@ -15,7 +20,7 @@ train:
   nesterov: True
   weight_decay: 0.0001
   no_weight_decay_on_bn: False
-  loss: L1
+  loss: L2
   seed: 0
   test_id: 0
   val_ratio: 0.1
