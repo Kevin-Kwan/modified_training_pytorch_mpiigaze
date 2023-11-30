@@ -18,4 +18,3 @@ CUDA_VISIBLE_DEVICES=${devices} python -u evaluate.py \
     test.test_id ${test_id} \
     test.checkpoint "${exp_dir}"/checkpoint_0015.pth \
     test.output_dir "${exp_dir}"/eval
-done

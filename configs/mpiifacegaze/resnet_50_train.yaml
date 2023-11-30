@@ -15,7 +15,7 @@ model:
 train:
   batch_size: 32
   optimizer: sgd
-  base_lr: 0.1
+  base_lr: 0.01
   momentum: 0.9
   nesterov: True
   weight_decay: 0.0001

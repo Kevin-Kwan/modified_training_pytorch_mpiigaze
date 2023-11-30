@@ -51,7 +51,12 @@ def main():
 
     model = create_model(config)
     checkpoint = torch.load(config.test.checkpoint, map_location='cpu')
-    model.load_state_dict(checkpoint['model'])
+
+    # Load state dict, ignoring layers with size mismatch
+    model_dict = model.state_dict()
+    pretrained_dict = {k: v for k, v in checkpoint['model'].items() if k in model_dict and model_dict[k].size() == v.size()}
+    model_dict.update(pretrained_dict)
+    model.load_state_dict(model_dict)
 
     predictions, gts, angle_error = test(model, test_loader, config)
 

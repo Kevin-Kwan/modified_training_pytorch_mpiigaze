@@ -6,7 +6,7 @@ transform:
   mpiifacegaze_face_size: 224
   mpiifacegaze_gray: False
 model:
-  name: resnet_50
+  name: resnet_simple
 test:
   test_id: 0
   checkpoint: experiments/mpiifacegaze/resnet_50/exp00/00/checkpoint_0015.pth
