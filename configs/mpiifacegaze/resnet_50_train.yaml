@@ -6,7 +6,7 @@ transform:
   mpiifacegaze_face_size: 224
   mpiifacegaze_gray: False
 model:
-  name: resnet_50
+  name: resnet_simple
   backbone:
     name: resnet_simple
     pretrained: resnet50
