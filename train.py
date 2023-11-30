@@ -48,6 +48,9 @@ def train(epoch, model, optimizer, scheduler, loss_function, train_loader,
         loss = loss_function(outputs, gazes)
         loss.backward()
 
+        # Add gradient clipping
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+        
         optimizer.step()
 
         angle_error = compute_angle_error(outputs, gazes).mean()
@@ -132,6 +135,7 @@ def validate(epoch, model, loss_function, val_loader, config,
 
 
 def main():
+    
     config = load_config()
 
     set_seeds(config.train.seed)
