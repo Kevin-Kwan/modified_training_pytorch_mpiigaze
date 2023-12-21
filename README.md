@@ -1,3 +1,6 @@
+Try out the fixed demo here: https://github.com/Kevin-Kwan/fixed_pytorch_mpiigaze_demo/
+
+
 # An unofficial PyTorch implementation of MPIIGaze and MPIIFaceGaze
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
